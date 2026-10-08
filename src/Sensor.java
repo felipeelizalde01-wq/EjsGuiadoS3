@@ -8,7 +8,10 @@ public class Sensor {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre != null && !nombre.isBlank()){
+            this.nombre = nombre;
+        }
+
     }
 
     public String getTipo() {
@@ -16,7 +19,9 @@ public class Sensor {
     }
 
     public void setTipo(String tipo) {
-        this.tipo = tipo;
+        if(tipo != null && !tipo.isBlank()){
+            this.tipo = tipo;
+        }
     }
 
     public double getLectura() {
@@ -24,11 +29,7 @@ public class Sensor {
     }
 
     public void setLectura(double lectura) {
-        if (lectura >= 0) {
-            this.lectura = lectura;
-        } else {
-            System.out.println("Error: La lectura del sensor es inválida.");
-        }
+        this.lectura = lectura;
     }
 
     public void actualizarLectura(double nuevaLectura) {
